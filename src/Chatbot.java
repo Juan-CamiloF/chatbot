@@ -89,7 +89,8 @@ public class Chatbot {
         if(opcionFinal.equals("cardiovasculares") || opcionFinal.equals("cardiovascular") || opcionFinal.equals("1")){
             return 1;
         }
-        if(opcionFinal.equals("respiratorias") || opcionFinal.equals("respiratoria") || opcionFinal.equals("2")){
+        if(opcionFinal.equals("respiratorias") || opcionFinal.equals("respiratoria") ||
+                opcionFinal.equals("respiratorio") || opcionFinal.equals("2")){
             return 2;
         }
         if(opcionFinal.equals("renales") || opcionFinal.equals("renal") ||  opcionFinal.equals("3")){
