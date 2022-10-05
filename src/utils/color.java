@@ -1,6 +1,8 @@
-package colores;
+package utils;
 
-
+/**
+ * Clase de declaración de los colores para la terminal
+ */
 public class color {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";

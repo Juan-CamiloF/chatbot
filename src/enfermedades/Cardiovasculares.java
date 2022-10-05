@@ -3,17 +3,25 @@ package enfermedades;
 import java.util.Locale;
 import java.util.Scanner;
 
-import static colores.color.*;
+import static utils.color.*;
 
+/**
+ * Clase principal y métodos de las enfermedades cardiovasculares
+ */
 public class Cardiovasculares {
 
+    /**
+     * Menú de las opciones de frutas para las enfermedades cardiovasculares
+     *
+     * @param nombre del Usuario
+     */
     public static void enfermedadesCardiovasculares(String nombre) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("\nLa opción escogida fue: Enfermedades cardiovasculares");
-        System.out.println(nombre + " para este tipo de enfermedades tenemos estás opciones para ti");
         String opcion;
         int resultado;
         do {
+            System.out.println("\nLa opción escogida fue: Enfermedades cardiovasculares");
+            System.out.println(nombre + " para este tipo de enfermedades tenemos estás opciones para ti");
             System.out.println("-----| Enfermedades cardiovasculares |-----");
             System.out.println("------------------------------------------");
             System.out.println(ANSI_RED + "(1) Frutos rojos" + ANSI_RESET);
@@ -32,7 +40,13 @@ public class Cardiovasculares {
         } while (resultado != 0);
     }
 
-    public static int menuCardiovascular(String opcion) {
+    /**
+     * Implementación de las opciones presentadas en el menú
+     *
+     * @param opcion
+     * @return {int resultado}
+     */
+    private static int menuCardiovascular(String opcion) {
         int resultado = palabrasClave(opcion);
         switch (resultado) {
             case 0:
@@ -70,7 +84,13 @@ public class Cardiovasculares {
         return resultado;
     }
 
-    public static int palabrasClave(String opcion) {
+    /**
+     * Clasificación de las palabras claves en opciones númericas
+     *
+     * @param opcion
+     * @return {int resultado}
+     */
+    private static int palabrasClave(String opcion) {
         String opcionFinal = opcion.toLowerCase(Locale.ROOT).trim();
         if (opcionFinal.equals("rojos") || opcionFinal.equals("rojo")
                 || opcionFinal.equals("frutos rojos") || opcionFinal.equals("1")) {
@@ -114,7 +134,10 @@ public class Cardiovasculares {
         return 11;
     }
 
-    public static void frutosRojos() {
+    /**
+     * Método para la opción de frutas rojas
+     */
+    private static void frutosRojos() {
         System.out.println("\nPara las frutas rojas se encuentran las siguientes opciones");
         System.out.println(ANSI_RED + "Fresa: " + ANSI_RESET);
         System.out.println("Contribuyen a la dilatación de las arterias, protegen la capa interior de los " +
@@ -125,7 +148,10 @@ public class Cardiovasculares {
         System.out.println("Fin de la recomendación.\n");
     }
 
-    public static void frutosVerdes() {
+    /**
+     * Método para la opción de frutas verdes
+     */
+    private static void frutosVerdes() {
         System.out.println("\nPara las frutas verdes se encuentran las siguientes opciones");
         System.out.println(ANSI_GREEN + "Kiwi: " + ANSI_RESET);
         System.out.println("Es un protector de las arterias y capilares, además, ayuda a reducir la tensión arterial.");
@@ -140,7 +166,10 @@ public class Cardiovasculares {
 
     }
 
-    public static void frutosMorados() {
+    /**
+     * Método para la opción de frutas moradas
+     */
+    private static void frutosMorados() {
         System.out.println("\nPara las frutas moradas se encuentran las siguientes opciones");
         System.out.println(ANSI_PURPLE + "Ciruela: " + ANSI_RESET);
         System.out.println("Tiene una gran cantidad de potasio que ayuda a reducir la presión arterial.");
@@ -153,7 +182,10 @@ public class Cardiovasculares {
         System.out.println("Fin de la recomendación.\n");
     }
 
-    public static void frutosClaros() {
+    /**
+     * Método para la opción de frutas claras
+     */
+    private static void frutosClaros() {
         System.out.println("\nPara las frutas de color claro se encuentran las siguientes opciones");
         System.out.println(ANSI_CYAN + "Melocotón: " + ANSI_RESET);
         System.out.println("Tienen altos contenidos de fibras, potasio y vitamina C las cuales ayudan a disminuir la " +
@@ -164,7 +196,10 @@ public class Cardiovasculares {
         System.out.println("Fin de la recomendación.\n");
     }
 
-    public static void mejorRecomendacion() {
+    /**
+     * Método para la opción de mejor recomendación
+     */
+    private static void mejorRecomendacion() {
         System.out.println("La mejor recomendación de frutas para personas con enfermedades cardiovasculares es: ");
         System.out.println(ANSI_GREEN + "Pera: " + ANSI_RESET);
         System.out.println("Ayuda como antioxidante para disminuir la rigidez de los tejidos cardíacos, disminuye el " +

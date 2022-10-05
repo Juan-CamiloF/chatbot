@@ -3,18 +3,26 @@ package enfermedades;
 import java.util.Locale;
 import java.util.Scanner;
 
-import static colores.color.*;
-import static colores.color.ANSI_RESET;
+import static utils.color.*;
+import static utils.color.ANSI_RESET;
 
+/**
+ * Clase principal de las enfermedades gastrointestinales
+ */
 public class Gastrointestinales {
 
+    /**
+     * Menú de las opciones de frutas para las enfermedades cardiovasculares
+     *
+     * @param nombre del Usuario
+     */
     public static void enfermedadesGastrointestinales(String nombre) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("\nLa opción escogida fue: Enfermedades gastrointestinales");
-        System.out.println(nombre + " para este tipo de enfermedades tenemos estás opciones para ti");
         String opcion;
         int resultado;
         do {
+            System.out.println("\nLa opción escogida fue: Enfermedades gastrointestinales");
+            System.out.println(nombre + " para este tipo de enfermedades tenemos estás opciones para ti");
             System.out.println("-----| Enfermedades gastrointestinales |-----");
             System.out.println("------------------------------------------");
             System.out.println(ANSI_RED + "(1) Frutos rojos" + ANSI_RESET);
@@ -22,8 +30,8 @@ public class Gastrointestinales {
             System.out.println(ANSI_YELLOW + "(3) Frutos tropicales" + ANSI_RESET);
             System.out.println(ANSI_BLUE + "(4) Todas las opciones" + ANSI_RESET);
             System.out.println(ANSI_YELLOW + "(5) Mejores recomendaciones" + ANSI_RESET);
-            System.out.println("(0) Volver al menu principal");
-            System.out.println("(10) Terminar conversación");
+            System.out.println("(0 o Volver) Volver al menú principal");
+            System.out.println("(10 o Salir) Terminar conversación");
             System.out.println("------------------------------------------");
             System.out.print("Por favor digita la opción por el número indicado en paréntesis" +
                     " o el nombre de la opción: ");
@@ -32,7 +40,13 @@ public class Gastrointestinales {
         } while (resultado != 0);
     }
 
-    public static int menuGastrointestinal(String opcion) {
+    /**
+     * Implementación de las opciones presentadas en el menú
+     *
+     * @param opcion
+     * @return {int resultado}
+     */
+    private static int menuGastrointestinal(String opcion) {
         int resultado = palabrasClave(opcion);
         switch (resultado) {
             case 0:
@@ -66,7 +80,13 @@ public class Gastrointestinales {
         return resultado;
     }
 
-    public static int palabrasClave(String opcion) {
+    /**
+     * Clasificación de las palabras claves en opciones númericas
+     *
+     * @param opcion
+     * @return {int resultado}
+     */
+    private static int palabrasClave(String opcion) {
         String opcionFinal = opcion.toLowerCase(Locale.ROOT).trim();
         if (opcionFinal.equals("rojos") || opcionFinal.equals("rojo")
                 || opcionFinal.equals("frutos rojos") || opcionFinal.equals("1")) {
@@ -105,7 +125,10 @@ public class Gastrointestinales {
         return 11;
     }
 
-    public static void frutosRojos() {
+    /**
+     * Método para la opción de frutas rojas
+     */
+    private static void frutosRojos() {
         System.out.println("\nPara las frutas rojas se encuentran las siguientes opciones");
         System.out.println(ANSI_RED + "Manzana roja: " + ANSI_RESET);
         System.out.println("Ofrece una buena cantidad de pectina, además de ácido málico y quercetina. " +
@@ -118,7 +141,10 @@ public class Gastrointestinales {
         System.out.println("Fin de la recomendación.\n");
     }
 
-    public static void frutosClaros() {
+    /**
+     * Método para la opción de frutas claras
+     */
+    private static void frutosClaros() {
         System.out.println("\nPara las frutas de colores claros se encuentran las siguientes opciones");
         System.out.println(ANSI_CYAN + "Plátano: " + ANSI_RESET);
         System.out.println("Tiene propiedades que ayudan a prevenir las úlceras gástricas y proteger la mucosa " +
@@ -126,7 +152,10 @@ public class Gastrointestinales {
         System.out.println("Fin de la recomendación.\n");
     }
 
-    public static void frutosTropicales() {
+    /**
+     * Método para la opción de frutas tropicales
+     */
+    private static void frutosTropicales() {
         System.out.println("\nPara las frutas tropicales se encuentran las siguientes opciones");
         System.out.println(ANSI_YELLOW + "Coco: " + ANSI_RESET);
         System.out.println("Tiene propiedades bastante buenas para la salud gastrointestinal, además, ayuda a " +
@@ -137,7 +166,10 @@ public class Gastrointestinales {
         System.out.println("Fin de la recomendación.\n");
     }
 
-    public static void mejorRecomendacion() {
+    /**
+     * Método para la opción de mejor recomendación
+     */
+    private static void mejorRecomendacion() {
         System.out.println("La mejor recomendación de frutas para personas con enfermedades gastrointestinales es: ");
         System.out.println(ANSI_RED + "Manzana roja: " + ANSI_RESET);
         System.out.println("Ofrece una buena cantidad de pectina, además de ácido málico y quercetina. " +

@@ -3,25 +3,31 @@ package enfermedades;
 import java.util.Locale;
 import java.util.Scanner;
 
-import static colores.color.*;
-import static colores.color.ANSI_RESET;
+import static utils.color.*;
+import static utils.color.ANSI_RESET;
 
 public class Renales {
+
+    /**
+     * Menú de las opciones de frutas para las enfermedades cardiovasculares
+     *
+     * @param nombre del Usuario
+     */
     public static void enfermedadesRenales(String nombre) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("\nLa opción escogida fue: Enfermedades renales");
-        System.out.println(nombre + " para este tipo de enfermedades tenemos estás opciones para ti");
         String opcion;
         int resultado;
         do {
+            System.out.println("\nLa opción escogida fue: Enfermedades renales");
+            System.out.println(nombre + " para este tipo de enfermedades tenemos estás opciones para ti");
             System.out.println("-----| Enfermedades renales |-----");
             System.out.println("------------------------------------------");
             System.out.println(ANSI_RED + "(1) Frutos rojos" + ANSI_RESET);
             System.out.println(ANSI_CYAN + "(2) Frutos de color claro" + ANSI_RESET);
             System.out.println(ANSI_BLUE + "(3) Todas las opciones" + ANSI_RESET);
             System.out.println(ANSI_YELLOW + "(4) Mejores recomendaciones" + ANSI_RESET);
-            System.out.println("(0) Volver al menu principal");
-            System.out.println("(10) Terminar conversación");
+            System.out.println("(0 o Volver) Volver al menú principal");
+            System.out.println("(10 o Salir) Terminar conversación");
             System.out.println("------------------------------------------");
             System.out.print("Por favor digita la opción por el número indicado en paréntesis" +
                     "o el nombre de la opción: ");
@@ -30,7 +36,13 @@ public class Renales {
         } while (resultado != 0);
     }
 
-    public static int menuRenal(String opcion) {
+    /**
+     * Implementación de las opciones presentadas en el menú
+     *
+     * @param opcion
+     * @return {int resultado}
+     */
+    private static int menuRenal(String opcion) {
         int resultado = palabrasClave(opcion);
         switch (resultado) {
             case 0:
@@ -60,7 +72,13 @@ public class Renales {
         return resultado;
     }
 
-    public static int palabrasClave(String opcion) {
+    /**
+     * Clasificación de las palabras claves en opciones númericas
+     *
+     * @param opcion
+     * @return {int resultado}
+     */
+    private static int palabrasClave(String opcion) {
         String opcionFinal = opcion.toLowerCase(Locale.ROOT).trim();
         if (opcionFinal.equals("rojos") || opcionFinal.equals("rojo")
                 || opcionFinal.equals("frutos rojos") || opcionFinal.equals("1")) {
@@ -95,8 +113,10 @@ public class Renales {
         return 11;
     }
 
-
-    public static void frutosRojos() {
+    /**
+     * Método para la opción de frutas rojas
+     */
+    private static void frutosRojos() {
         System.out.println("\nPara las frutas rojas se encuentran las siguientes opciones");
         System.out.println(ANSI_RED + "Fresa: " + ANSI_RESET);
         System.out.println("Tienen un alto grado de vitamina C ayudando prevenir la oxidación del cuerpo " +
@@ -113,7 +133,10 @@ public class Renales {
 
     }
 
-    public static void frutosClaros() {
+    /**
+     * Método para la opción de frutas claras
+     */
+    private static void frutosClaros() {
         System.out.println("\nPara las frutas de color claro se encuentran las siguientes opciones");
         System.out.println(ANSI_CYAN + "Melocotón: " + ANSI_RESET);
         System.out.println("Aumenta la actividad secretora de las glándulas digestivas y facilita la digestión de " +
@@ -129,7 +152,10 @@ public class Renales {
         System.out.println("Fin de la recomendación.\n");
     }
 
-    public static void mejorRecomendacion() {
+    /**
+     * Método para la opción de mejor recomendación
+     */
+    private static void mejorRecomendacion() {
         System.out.println("La mejor recomendación de frutas para personas con enfermedades renales es: ");
         System.out.println(ANSI_RED + "Sandia: " + ANSI_RESET);
         System.out.println("Es la mejor recomendación para enfermedades renales ya que contiene propiedades que ayudan" +

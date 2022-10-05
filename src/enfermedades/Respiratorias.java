@@ -3,26 +3,31 @@ package enfermedades;
 import java.util.Locale;
 import java.util.Scanner;
 
-import static colores.color.*;
-import static colores.color.ANSI_RESET;
+import static utils.color.*;
+import static utils.color.ANSI_RESET;
 
 public class Respiratorias {
 
+    /**
+     * Menú de las opciones de frutas para las enfermedades cardiovasculares
+     *
+     * @param nombre del Usuario
+     */
     public static void enfermedadesRespiratorias(String nombre) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("\nLa opción escogida fue: Enfermedades respiratorias");
-        System.out.println(nombre + " para este tipo de enfermedades tenemos estás opciones para ti");
         String opcion;
         int resultado;
         do {
+            System.out.println("\nLa opción escogida fue: Enfermedades respiratorias");
+            System.out.println(nombre + " para este tipo de enfermedades tenemos estás opciones para ti");
             System.out.println("-----| Enfermedades respiratorias |-----");
             System.out.println("------------------------------------------");
             System.out.println(ANSI_GREEN + "(1) Frutos cítricos" + ANSI_RESET);
             System.out.println(ANSI_RED + "(2) Frutos rojos" + ANSI_RESET);
             System.out.println(ANSI_BLUE + "(3) Todas las opciones" + ANSI_RESET);
             System.out.println(ANSI_YELLOW + "(4) Mejores recomendaciones" + ANSI_RESET);
-            System.out.println("(0) Volver al menu principal");
-            System.out.println("(10) Terminar conversación");
+            System.out.println("(0 o Volver) Volver al menú principal");
+            System.out.println("(10 o Salir) Terminar conversación");
             System.out.println("------------------------------------------");
             System.out.print("Por favor digita la opción por el número indicado en paréntesis" +
                     "o el nombre de la opción: ");
@@ -31,7 +36,13 @@ public class Respiratorias {
         } while (resultado != 0);
     }
 
-    public static int menuRespiratorio(String opcion) {
+    /**
+     * Implementación de las opciones presentadas en el menú
+     *
+     * @param opcion
+     * @return {int resultado}
+     */
+    private static int menuRespiratorio(String opcion) {
         int resultado = palabrasClave(opcion);
         switch (resultado) {
             case 0:
@@ -62,7 +73,13 @@ public class Respiratorias {
         return resultado;
     }
 
-    public static int palabrasClave(String opcion) {
+    /**
+     * Clasificación de las palabras claves en opciones númericas
+     *
+     * @param opcion
+     * @return {int resultado}
+     */
+    private static int palabrasClave(String opcion) {
         String opcionFinal = opcion.toLowerCase(Locale.ROOT).trim();
         if (opcionFinal.equals("citricos") || opcionFinal.equals("cítricos")
                 || opcionFinal.equals("citrico") || opcionFinal.equals("cítrico")
@@ -75,7 +92,7 @@ public class Respiratorias {
             return 2;
         }
         if (opcionFinal.equals("todas las opciones") || opcionFinal.equals("todas") || opcionFinal.equals("opciones")
-                ||  opcionFinal.equals("todos") || opcionFinal.equals("3")) {
+                || opcionFinal.equals("todos") || opcionFinal.equals("3")) {
             return 3;
         }
         if (opcionFinal.equals("mejores recomendaciones") || opcionFinal.equals("recomendaciones")
@@ -96,8 +113,10 @@ public class Respiratorias {
         return 11;
     }
 
-
-    public static void frutosCitricos() {
+    /**
+     * Método para la opción de frutas cítricas
+     */
+    private static void frutosCitricos() {
         System.out.println("\nPara las frutas cítricas se encuentran las siguientes opciones");
         System.out.println(ANSI_GREEN + "Naranja: " + ANSI_RESET);
         System.out.println("Tienen altos grados de vitamina C y antioxidantes que permiten evitar " +
@@ -114,7 +133,10 @@ public class Respiratorias {
 
     }
 
-    public static void frutosRojos() {
+    /**
+     * Método para la opción de frutas rojas
+     */
+    private static void frutosRojos() {
         System.out.println("\nPara las frutas rojas se encuentran las siguientes opciones");
         System.out.println(ANSI_RED + "Fresa: " + ANSI_RESET);
         System.out.println("Tienen un alto grado de vitamina C ayudando a mantener la salud de los pulmones");
@@ -125,6 +147,9 @@ public class Respiratorias {
 
     }
 
+    /**
+     * Método para la opción de mejor recomendación
+     */
     private static void mejorRecomendacion() {
         System.out.println("La mejor recomendación de frutas para personas con enfermedades cardiovasculares es: ");
         System.out.println(ANSI_RED + "Manzana roja: " + ANSI_RESET);
